@@ -2187,6 +2187,38 @@ input, select, textarea {
 				width: 100%;
 			}
 
+		/* Fixed aspect ratio helper for consistent thumbnails */
+		.image.aspect-16x9 {
+			position: relative;
+			display: block;
+			overflow: hidden;
+		}
+
+		.image.aspect-16x9::before {
+			content: '';
+			display: block;
+			padding-top: 56.25%;
+		}
+
+		.image.aspect-16x9 img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 0;
+		}
+
+		/* Subtle hover zoom for project thumbnails */
+		.features article .image img {
+			transition: transform 0.3s ease;
+		}
+
+		.features article .image:hover img {
+			transform: scale(1.03);
+		}
+
 		.image.avatar {
 			border-radius: 100%;
 			overflow: hidden;
@@ -2200,12 +2232,16 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			height: 15em;
+			height: auto;
 			border-radius: 0;
 		}
 
 			.image.main img {
 				border-radius: 0;
+				position: static;
+				width: 100%;
+				height: auto;
+				object-fit: contain !important;
 			}
 
 /* List */
@@ -2961,7 +2997,7 @@ input, select, textarea {
 				}
 
 			.image.main {
-				height: 20em;
+				height: auto;
 			}
 
 		/* Header */
@@ -3143,7 +3179,7 @@ input, select, textarea {
 			}
 
 			.image.main {
-				height: 12em;
+				height: auto;
 			}
 
 		/* Section/Article */

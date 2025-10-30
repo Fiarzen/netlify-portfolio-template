@@ -1,0 +1,11 @@
+* text=auto eol=lf
+
+# Treat common image formats as binary (no line-ending normalization)
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+
+# SVGs are text; keep LF endings
+*.svg text eol=lf
