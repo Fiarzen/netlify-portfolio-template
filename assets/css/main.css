@@ -193,7 +193,7 @@ body,
 input,
 select,
 textarea {
-  color: #888;
+  color: #000000;
   font-family: "Lato", sans-serif;
   font-size: 16pt;
   font-weight: 400;
@@ -3488,7 +3488,6 @@ input[type="button"]:disabled,
 
 #two {
   font-weight: bold;
-  
 }
 
 #three .features article {
