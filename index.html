@@ -1,884 +1,210 @@
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jeremy Lam — Data &amp; Software Engineer</title>
+  <meta name="description" content="Jeremy Lam is a Data &amp; Software Engineer based in the UK, building data pipelines and full-stack apps with Python, AWS and Terraform." />
+  <meta property="og:title" content="Jeremy Lam — Data &amp; Software Engineer" />
+  <meta property="og:description" content="Building data pipelines and full-stack apps with Python, AWS and Terraform." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
 
-<html>
-  <head>
-    <title>Jeremy Lam - Data/Software Engineer</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-  <body class="is-preload">
-    <!-- Header -->
-    <section id="header">
-      <header>
-        <span class="image avatar"
-          ><img
-            src="images/avatar.jpg"
-            alt="Jeremy Lam headshot"
-            loading="lazy"
-            decoding="async"
-        /></span>
-        <h1 id="logo"><a href="#">Jeremy Lam</a></h1>
-        <p>Data and software engineer</p>
-      </header>
-      <nav id="nav">
-        <ul>
-          <li><a href="#one" class="active">About</a></li>
-          <li><a href="#two">Technical Skills</a></li>
-          <li><a href="#three">Projects</a></li>
-          <li><a href="#four">Music and other interests</a></li>
-          <li><a href="#five">Contact Me</a></li>
-        </ul>
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <footer>
-        <ul class="icons">
-          <li>
-            <a
-              href="https://github.com/Fiarzen"
-              class="icon brands fa-github"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="mailto:Jeremy.fiarzen.lam@gmail.com"
-              class="icon solid fa-envelope"
-              ><span class="label">Email</span></a
-            >
-          </li>
-        </ul>
-      </footer>
+      <a class="cta" href="contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home" aria-labelledby="heroHeading">
+      <div class="wrap">
+        <div class="kicker mono">
+          <span class="pulse" aria-hidden="true"></span>
+          Data &amp; Software Engineer · UK
+        </div>
+        <h1 id="heroHeading">Clear systems, <span class="em">clean code</span>, a little rhythm.</h1>
+        <p class="lede">I build data pipelines and full-stack apps with Python, AWS and Terraform — and write music when the compiler's happy. Bootcamp-trained, project-obsessed, always shipping.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="projects.html">View work <span class="ar" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="meta" aria-label="Quick facts">
+          <div class="stat">
+            <div class="n">9+</div>
+            <div class="l">shipped projects</div>
+          </div>
+          <div class="stat">
+            <div class="n">2</div>
+            <div class="l">eng bootcamps</div>
+          </div>
+          <div class="stat">
+            <div class="n" style="display:flex; align-items:center; gap:10px;" aria-label="session musician">
+              <span aria-hidden="true">∿</span>
+              <span class="wave" id="heroWave" aria-hidden="true"></span>
+            </div>
+            <div class="l">session musician</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Main -->
-      <div id="main">
-        <!-- One -->
-        <section id="one">
-          <div class="image main" data-position="center">
-            <img
-              src="images/banner.png"
-              alt="Abstract banner"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
-          <!-- Two -->
-          <section id="two">
-            <div class="container">
-              <h3>Technical skills</h3>
-              <p></p>
-              <ul class="feature-icons">
-                <li class="icon solid fa-code">
-                  Code: Python, Java, Javascript (Node, React)
-                </li>
-                <li class="icon solid fa-cubes">
-                  Cloud: AWS, Google Cloud Platform
-                </li>
-                <li class="icon solid fa-cubes">
-                  DevOps: Terraform, CI/CD (GitHub Actions)
-                </li>
-                <li class="icon solid fa-cubes">
-                  Data: SQL, Database Modelling, Normalisation, Warehouse Design
-                </li>
-                <li class="icon solid fa-cubes">
-                  Design patterns: Star Schema, Data Lake, Lakehouse, Mesh
-                </li>
-                <li class="icon solid fa-code">
-                  Testing: Test Driven Development (TDD), Pytest, Jest, Vitest
-                </li>
-              </ul>
-            </div>
-          </section>
-          <div class="container">
-            <header class="major">
-              <h2>About Me</h2>
-              <p>
-                <br />
-                Software/Data engineer: Python, AWS, Terraform, SQL, JavaScript,
-                Node.js, React.js, Django, Java
-              </p>
-            </header>
-            <p>
-              After completing an intensive 13-week Data Engineering bootcamp
-              with Northcoders and a 12-week Software Development bootcamp with
-              TechNative, I am now focused on expanding my skill set by learning
-              new frameworks while deepening my expertise in those I already
-              use. Outside of coding, I enjoy playing guitar and writing music,
-              and I have professional experience as a session musician and music
-              educator.
-            </p>
-          </div>
-        </section>
+    <!-- CORE STACK -->
+    <section class="skills wrap" aria-labelledby="stackLabel">
+      <div class="lbl" id="stackLabel">Core stack</div>
+      <div class="chips" role="list">
+        <span class="chip" role="listitem">Python</span>
+        <span class="chip" role="listitem">Java</span>
+        <span class="chip" role="listitem">JavaScript</span>
+        <span class="chip" role="listitem">Node.js</span>
+        <span class="chip" role="listitem">React</span>
+        <span class="chip" role="listitem">AWS</span>
+        <span class="chip" role="listitem">Google Cloud</span>
+        <span class="chip" role="listitem">Terraform</span>
+        <span class="chip" role="listitem">SQL</span>
+        <span class="chip" role="listitem">CI/CD</span>
+        <span class="chip" role="listitem">Pytest</span>
+        <span class="chip" role="listitem">TDD</span>
+      </div>
+    </section>
 
-        <!-- Three -->
-        <section id="three">
-          <div class="container">
-            <h3>Projects</h3>
-            <p></p>
-            <div class="features">
-              <article><a
-  
-            href="https://sts-stats-tracker-production.up.railway.app"
-            class="image aspect-9x16"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="images/sts-analyser.png"
-              alt="Slay the Spire 2 Run Analyser screenshot"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-          <div class="inner">
-            <h4>Slay the Spire 2 Run Analyser</h4>
-            <p>
-              <strong>Python FastAPI</strong> backend with a vanilla
-              <strong>JavaScript</strong> dashboard for analysing run data from
-              the roguelike <strong>Slay the Spire 2</strong>. Parses
-              <strong>.run</strong> files to surface card pick rates, relic win
-              rates, and encounter difficulty across multiple runs. Supports
-              <strong>zip upload</strong>, in-session file storage, and
-              filtering by character and ascension level. Deployed on
-              <strong>Railway</strong>.
-              <br />
-              
-                <a href="https://github.com/Fiarzen/sts-stats-tracker"
-                class="icon brands fa-github"
-                target="_blank"
-                rel="noopener noreferrer"
-                >GitHub Link</a
-              >
-              
-                <a href="https://sts-stats-tracker-production.up.railway.app"
-                class="icon brands fa-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Demo Link</a
-              >
-            </p>
+    <!-- FEATURED PROJECTS -->
+    <section class="section-wrap wrap" aria-labelledby="featuredHeading">
+      <div class="sec-head">
+        <div>
+          <div class="idx" aria-hidden="true">// featured</div>
+          <h2 id="featuredHeading">Selected work</h2>
+        </div>
+        <a class="btn btn-ghost" href="projects.html">All projects <span class="ar" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="grid">
+
+        <article class="card">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Data, Web">Data · Web</span>
+            <img src="images/sts-analyser.png" alt="STS 2 Run Analyser dashboard showing run statistics" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>STS 2 Run Analyser</h3>
+            <p>FastAPI backend with a vanilla JS dashboard analysing roguelike run data — card pick rates, relic win rates, encounter difficulty, zip upload &amp; filtering by character/ascension.</p>
+            <div class="tags">
+              <span>Python</span><span>FastAPI</span><span>Railway</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/sts-stats-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://sts-stats-tracker-production.up.railway.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            </div>
           </div>
         </article>
-              <article>
-                <a
-                  href="https://mind-leaf.netlify.app"
-                  class="image aspect-9x16"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="images/course-hosting.png"
-                    alt="Full-stack Course Hosting WebApp screenshot"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </a>
-                <div class="inner">
-                  <h4>Full-stack Course Hosting WebApp</h4>
-                  <p>
-                    <strong>Java Spring Boot</strong> and
-                    <strong>React.js</strong> full-stack application featuring
-                    <strong>RBAC</strong>, lesson tracking, and
-                    <strong>Spring Security</strong>. Integrated
-                    <strong>AWS S3</strong> for scalable resource management and
-                    <strong>Terraform</strong> to provision
-                    <strong>RDS PostgreSQL</strong> and
-                    <strong>EC2</strong> infrastructure.
-                    <br />
-                    <a
-                      href="https://github.com/Fiarzen/course-hosting-backend"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub Link</a
-                    >
-                    <a
-                      href="https://mind-leaf.netlify.app"
-                      class="icon brands fa-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Demo Link</a
-                    >
-                  </p>
-                </div>
-              </article>
-              <article>
-                <a
-                  href="https://github.com/Fiarzen/audio-analysis"
-                  class="image aspect-1x1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="images/audio-analysis-4.png"
-                    alt="Audio analysis webapp screenshot"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>Google Cloud Audio Analysis WebApp</h4>
-                  <p>
-                    <strong>Python </strong>for audio processing,
-                    <strong>Node.JS/express</strong> for backend and vanilla
-                    javascript/css for frontend. A web application for analysing
-                    audio files using Google Cloud services.
-                    <strong>Terraform</strong>
-                    to build cloud infrastructure.
-                    <br />
-                    <a
-                      href="https://github.com/Fiarzen/audio-analysis"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                    |
 
-                    <a
-                      href="https://audio-analysis-web-n7afc3734q-ew.a.run.app"
-                      class="icon brands fa-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Demo
-                    </a>
-                  </p>
-                </div>
-              </article>
-              <article>
-                <a href="#" class="image aspect-16x9"
-                  ><img
-                    src="images/pic01.jpg"
-                    alt="ETL pipeline illustration"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>ETL Sales Data Pipeline</h4>
-                  <p>
-                    A complete data pipeline built using
-                    <strong>Terraform</strong> infrastructure in
-                    <strong>AWS. Python and Pandas</strong> for ETL functions
-                    and Tableau for business insights. <br />
-                    <a
-                      href="https://www.youtube.com/watch?v=Wdl2NvBZbqs"
-                      class="icon brands fa-youtube"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Project Video Presentation</a
-                    >
-                    |
-                    <a
-                      href="https://github.com/Fiarzen/de-totes-sales-data/"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                  </p>
-                </div>
-              </article>
-              <article>
-                <a href="#" class="image aspect-16x9"
-                  ><img
-                    src="images/pic02.jpg"
-                    alt="Guardian API streaming project"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>
-                    Data Streaming Project (Guardian API Content Publisher)
-                  </h4>
-                  <p>
-                    A data streaming project utilising the Guardian API for
-                    content publishing, searching for articles with specific
-                    terms and parameters, built with
-                    <strong>AWS</strong> services and <strong>Python</strong>.
-                    Designed for deployment within <strong>AWS Lambda</strong>,
-                    using
-                    <strong>Terraform</strong>
-                    to test deployability. <br />
-                    <a
-                      href="https://github.com/Fiarzen/Streaming-data-project/"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                  </p>
-                </div>
-              </article>
-              <article>
-                <a
-                  href="https://github.com/Fiarzen/groove-garden-backend-api"
-                  class="image aspect-16x9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="images/groove-garden-image.png"
-                    alt="api docs screenshot"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>Groove Garden backend api</h4>
-                  <p>
-                    <strong>Node.JS/express</strong> for backend api hosted on
-                    railway, linked to a psql database. Swagger/OpenAPI for
-                    documentation. The API allows users to register, login and
-                    manage playlists securely with authentication and
-                    authorisation using JWT tokens.
-                    <br />
-                    <a
-                      href="https://github.com/Fiarzen/groove-garden-backend-api"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                    |
-
-                    <a
-                      href="https://groove-garden-backend-api-production.up.railway.app/docs"
-                      class="icon brands fa-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Documentation
-                    </a>
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <a
-                  href="https://fiarzenstocktracker.netlify.app"
-                  class="image aspect-16x9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="images/pic04.jpg"
-                    alt="Stock market tracker screenshot"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>Stock Market Tracker</h4>
-                  <p>
-                    A simple interface to retrieve stock data using
-                    <strong>Javascript</strong> to retrieve data from the Alpha
-                    Vantage API, deployed to netlify. <br />
-                    <a
-                      href="https://fiarzenstocktracker.netlify.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Live Demo</a
-                    >
-                    |
-                    <a
-                      href="https://github.com/Fiarzen/stock-tracker"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                  </p>
-                </div>
-              </article>
-              <article>
-                <a
-                  href="https://fiarzen.github.io/sun-times"
-                  class="image aspect-16x9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="images/pic05.png"
-                    alt="Stock market tracker screenshot"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>Sun-time calculator</h4>
-                  <p>
-                    An app that calculates time until sunset or sunrise, using
-                    co-ordinates and a sunset/sunrise api.
-                    <strong>Javascript</strong> to retrieve data. <br />
-                    <a
-                      href="https://fiarzen.github.io/sun-times"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Live Demo</a
-                    >
-                    |
-                    <a
-                      href="https://github.com/Fiarzen/sun-times"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                  </p>
-                </div>
-              </article>
-
-              <article>
-                <a
-                  href="https://carbontracker-lbsyapcj8pg9fenqjcvun2.streamlit.app/"
-                  class="image aspect-16x9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  ><img
-                    src="images/pic03.jpg"
-                    alt="Carbon footprint calculator screenshot"
-                    loading="lazy"
-                    decoding="async"
-                /></a>
-                <div class="inner">
-                  <h4>Carbon footprint Calculator</h4>
-                  <p>
-                    A web application for calculating carbon footprints from
-                    everyday activities, built with <strong>Python</strong> and
-                    Streamlit. <br />
-                    <a
-                      href="https://github.com/Fiarzen/Carbon-footprint-calculator/"
-                      class="icon brands fa-github"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >GitHub</a
-                    >
-                    |
-                    <a
-                      href="https://carbontracker-lbsyapcj8pg9fenqjcvun2.streamlit.app/"
-                      class="icon brands fa-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      >Streamlit</a
-                    >
-                  </p>
-                </div>
-              </article>
+        <article class="card">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Web, Cloud">Web · Cloud</span>
+            <img src="images/course-hosting.png" alt="Course Hosting Platform interface" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Course Hosting Platform</h3>
+            <p>Spring Boot + React full-stack app: RBAC, lesson tracking, Spring Security, S3 storage and Terraform-provisioned RDS &amp; EC2.</p>
+            <div class="tags">
+              <span>Spring Boot</span><span>React</span><span>AWS</span><span>Terraform</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/course-hosting-backend" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://mind-leaf.netlify.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
             </div>
           </div>
-        </section>
-        <!-- Four -->
-        <section id="four">
-          <div class="container">
-            <h3>Music and other interests</h3>
-            <p>
-              Some of my songs can be found on my <br />
-              <a
-                href="https://jezmusic.bandcamp.com"
-                class="icon brands fa-bandcamp"
-                >Bandcamp</a
-              >
-              and
-              <a
-                href="https://www.youtube.com/@JeremyLam0"
-                class="icon brands fa-youtube"
-                >YouTube</a
-              >
-              channels. I also enjoy cooking and trying new plant-based recipes
-              I find, weightlifting and playing videogames with friends.
-            </p>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Cloud, Data">Cloud · Data</span>
+            <img src="images/audio-analysis-4.png" alt="Cloud Audio Analysis web app" loading="lazy" />
           </div>
-        </section>
-        <!-- Five -->
-        <section id="five">
-          <div class="container">
-            <h3>Contact Me</h3>
-            <p>
-              If you would like to get in touch, please feel free to email me at
-              <a href="mailto:jeremy.fiarzen.lam@gmail.com"
-                >jeremy.fiarzen.lam@gmail.com</a
-              >.
-            </p>
+          <div class="body">
+            <h3>Cloud Audio Analysis</h3>
+            <p>Audio analysis web app: Python processing, Node/Express backend, vanilla JS frontend, Google Cloud services and Terraform infra.</p>
+            <div class="tags">
+              <span>Python</span><span>GCP</span><span>Node</span><span>Terraform</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/audio-analysis" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://audio-analysis-web-n7afc3734q-ew.a.run.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            </div>
           </div>
-        </section>
-        <!-- Five -->
-        <!--
-							<section id="five">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
-							-->
-        <!-- Five -->
-        <!--
-							<section id="five">
-								<div class="container">
-									<h3>Elements</h3>
+        </article>
 
-									<section>
-										<h4>Text</h4>
-										<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-										This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-										This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-										<hr />
-										<header>
-											<h4>Heading with a Subtitle</h4>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<header>
-											<h5>Heading with a Subtitle</h5>
-											<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-										</header>
-										<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-										<hr />
-										<h2>Heading Level 2</h2>
-										<h3>Heading Level 3</h3>
-										<h4>Heading Level 4</h4>
-										<h5>Heading Level 5</h5>
-										<h6>Heading Level 6</h6>
-										<hr />
-										<h5>Blockquote</h5>
-										<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-										<h5>Preformatted</h5>
-										<pre><code>i = 0;
+      </div>
+    </section>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-									</section>
-
-									<section>
-										<h4>Lists</h4>
-										<div class="row">
-											<div class="col-6 col-12-xsmall">
-												<h5>Unordered</h5>
-												<ul>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-												<h5>Alternate</h5>
-												<ul class="alt">
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Sagittis adipiscing lorem eleifend.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ul>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<h5>Ordered</h5>
-												<ol>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-													<li>Dolor pulvinar etiam magna etiam.</li>
-													<li>Etiam vel felis at lorem sed viverra.</li>
-													<li>Felis enim feugiat dolore viverra.</li>
-												</ol>
-												<h5>Icons</h5>
-												<ul class="icons">
-													<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-													<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-													<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-													<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-													<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-													<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-												</ul>
-											</div>
-										</div>
-										<h5>Actions</h5>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Default</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Default</a></li>
-										</ul>
-										<ul class="actions small">
-											<li><a href="#" class="button primary small">Small</a></li>
-											<li><a href="#" class="button small">Small</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<div class="row">
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary">Default</a></li>
-													<li><a href="#" class="button">Default</a></li>
-													<li><a href="#" class="button alt">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6 col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small">Small</a></li>
-													<li><a href="#" class="button small">Small</a></li>
-													<li><a href="#" class="button alt small">Small</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary fit">Default</a></li>
-													<li><a href="#" class="button fit">Default</a></li>
-													<li><a href="#" class="button alt fit">Default</a></li>
-												</ul>
-											</div>
-											<div class="col-3 col-6-medium col-12-xsmall">
-												<ul class="actions stacked">
-													<li><a href="#" class="button primary small fit">Small</a></li>
-													<li><a href="#" class="button small fit">Small</a></li>
-													<li><a href="#" class="button alt small fit">Small</a></li>
-												</ul>
-											</div>
-										</div>
-									</section>
-
-									<section>
-										<h4>Table</h4>
-										<h5>Default</h5>
-										<div class="table-wrapper">
-											<table>
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-
-										<h5>Alternate</h5>
-										<div class="table-wrapper">
-											<table class="alt">
-												<thead>
-													<tr>
-														<th>Name</th>
-														<th>Description</th>
-														<th>Price</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Item One</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Two</td>
-														<td>Vis ac commodo adipiscing arcu aliquet.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Three</td>
-														<td> Morbi faucibus arcu accumsan lorem.</td>
-														<td>29.99</td>
-													</tr>
-													<tr>
-														<td>Item Four</td>
-														<td>Vitae integer tempus condimentum.</td>
-														<td>19.99</td>
-													</tr>
-													<tr>
-														<td>Item Five</td>
-														<td>Ante turpis integer aliquet porttitor.</td>
-														<td>29.99</td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="2"></td>
-														<td>100.00</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-									</section>
-
-									<section>
-										<h4>Buttons</h4>
-										<ul class="actions">
-											<li><a href="#" class="button primary">Primary</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt">Alternate</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary large">Large</a></li>
-											<li><a href="#" class="button">Default</a></li>
-											<li><a href="#" class="button alt small">Small</a></li>
-										</ul>
-										<ul class="actions fit">
-											<li><a href="#" class="button primary fit">Fit</a></li>
-											<li><a href="#" class="button fit">Fit</a></li>
-											<li><a href="#" class="button alt fit">Fit</a></li>
-										</ul>
-										<ul class="actions fit small">
-											<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-											<li><a href="#" class="button fit small">Fit + Small</a></li>
-											<li><a href="#" class="button alt fit small">Fit + Small</a></li>
-										</ul>
-										<ul class="actions">
-											<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-											<li><a href="#" class="button alt icon solid fa-check">Icon</a></li>
-										</ul>
-										<ul class="actions">
-											<li><span class="button primary disabled">Primary</span></li>
-											<li><span class="button disabled">Default</span></li>
-											<li><span class="button alt disabled">Alternate</span></li>
-										</ul>
-									</section>
-
-									<section>
-										<h4>Form</h4>
-										<form method="post" action="#">
-											<div class="row gtr-uniform">
-												<div class="col-6 col-12-xsmall">
-													<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-												</div>
-												<div class="col-6 col-12-xsmall">
-													<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-												</div>
-												<div class="col-12">
-													<select name="demo-category" id="demo-category">
-														<option value="">- Category -</option>
-														<option value="1">Manufacturing</option>
-														<option value="1">Shipping</option>
-														<option value="1">Administration</option>
-														<option value="1">Human Resources</option>
-													</select>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-													<label for="demo-priority-low">Low Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-normal" name="demo-priority">
-													<label for="demo-priority-normal">Normal Priority</label>
-												</div>
-												<div class="col-4 col-12-medium">
-													<input type="radio" id="demo-priority-high" name="demo-priority">
-													<label for="demo-priority-high">High Priority</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-copy" name="demo-copy">
-													<label for="demo-copy">Email me a copy of this message</label>
-												</div>
-												<div class="col-6 col-12-medium">
-													<input type="checkbox" id="demo-human" name="demo-human" checked>
-													<label for="demo-human">I am a human and not a robot</label>
-												</div>
-												<div class="col-12">
-													<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="col-12">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" /></li>
-														<li><input type="reset" value="Reset" class="alt" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-									</section>
-
-									<section>
-										<h4>Image</h4>
-										<h5>Fit</h5>
-										<span class="image fit"><img src="images/banner.jpg" alt="" /></span>
-										<div class="box alt">
-											<div class="row gtr-50 gtr-uniform">
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div>
-												<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-											</div>
-										</div>
-										<h5>Left &amp; Right</h5>
-										<p><span class="image left"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-										<p><span class="image right"><img src="images/avatar.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-									</section>
-
-								</div>
-							</section>
-						--></div>
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="container">
-          <ul class="copyright">
-            <li>&copy; Jeremy Lam. All rights reserved.</li>
-            <li>
-              Design:
-              <a
-                href="http://html5up.net"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Based on template from HTML5 UP</a
-              >
-            </li>
-          </ul>
+    <!-- MUSIC STRIP -->
+    <section class="music" aria-labelledby="musicHeading" style="margin-top:50px;">
+      <div class="wrap">
+        <div class="ico" aria-hidden="true">♪</div>
+        <div class="txt">
+          <h4 id="musicHeading">Off the clock, I make music</h4>
+          <p>Session musician, songwriter and music educator. Some of my tracks live on Bandcamp &amp; YouTube.</p>
         </div>
-      </section>
-    </div>
+        <div class="out">
+          <a href="https://jezmusic.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a>
+          <a href="https://www.youtube.com/@JeremyLam0" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // hero waveform bars
+  (function(){
+    const w = document.getElementById('heroWave');
+    if(!w) return;
+    for(let i=0;i<7;i++){
+      const b = document.createElement('i');
+      b.style.height = '100%';
+      b.style.animationDelay = (i * 0.12) + 's';
+      w.appendChild(b);
+    }
+  })();
+
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
 </html>

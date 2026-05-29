@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Jeremy Lam</title>
+  <meta name="description" content="Get in touch with Jeremy Lam — open to engineering roles and freelance work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <a class="cta" href="contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section" aria-labelledby="contactHeading">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div class="contact-idx" aria-hidden="true">// contact</div>
+          <h2 id="contactHeading">Let's build something.</h2>
+          <p>Open to engineering roles and freelance work. The fastest way to reach me is email.</p>
+          <a class="contact-email" href="mailto:jeremy.fiarzen.lam@gmail.com">
+            <span aria-hidden="true">✉</span> jeremy.fiarzen.lam@gmail.com
+          </a>
+          <div class="contact-socials" aria-label="Social links">
+            <a href="https://github.com/Fiarzen" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://jezmusic.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a>
+            <a href="https://www.youtube.com/@JeremyLam0" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+          </div>
+          <div class="contact-wavebg" id="ctaWave" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // decorative waveform bars
+  (function(){
+    const c = document.getElementById('ctaWave');
+    if(!c) return;
+    for(let i = 0; i < 60; i++){
+      const b = document.createElement('i');
+      b.style.height = (20 + Math.abs(Math.sin(i * 0.5)) * 80) + '%';
+      c.appendChild(b);
+    }
+  })();
+
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
+</html>

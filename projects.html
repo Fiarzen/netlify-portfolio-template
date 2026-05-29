@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects — Jeremy Lam</title>
+  <meta name="description" content="All projects by Jeremy Lam — data engineering, full-stack apps, and cloud infrastructure." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cta" href="contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-wrap wrap" aria-labelledby="projectsHeading">
+      <div class="sec-head">
+        <div>
+          <div class="idx" aria-hidden="true">// projects</div>
+          <h2 id="projectsHeading">Everything I've built</h2>
+          <p>Data engineering, full-stack apps and small useful tools. Filter by focus.</p>
+        </div>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter projects by category">
+        <button class="on" data-filter="all">All</button>
+        <button data-filter="Data">Data</button>
+        <button data-filter="Web">Web</button>
+        <button data-filter="Cloud">Cloud</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+
+        <article class="card" data-categories="Data Web">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Data, Web">Data · Web</span>
+            <img src="images/sts-analyser.png" alt="STS 2 Run Analyser dashboard" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>STS 2 Run Analyser</h3>
+            <p>FastAPI backend with a vanilla JS dashboard analysing roguelike run data — card pick rates, relic win rates, encounter difficulty, zip upload &amp; filtering by character/ascension.</p>
+            <div class="tags"><span>Python</span><span>FastAPI</span><span>Railway</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/sts-stats-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://sts-stats-tracker-production.up.railway.app" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Web Cloud">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Web, Cloud">Web · Cloud</span>
+            <img src="images/course-hosting.png" alt="Course Hosting Platform" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Course Hosting Platform</h3>
+            <p>Spring Boot + React full-stack app: RBAC, lesson tracking, Spring Security, S3 storage and Terraform-provisioned RDS &amp; EC2.</p>
+            <div class="tags"><span>Spring Boot</span><span>React</span><span>AWS</span><span>Terraform</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/course-hosting-backend" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://mind-leaf.netlify.app" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Cloud Data">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Cloud, Data">Cloud · Data</span>
+            <img src="images/audio-analysis-4.png" alt="Cloud Audio Analysis web app" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Cloud Audio Analysis</h3>
+            <p>Audio analysis web app: Python processing, Node/Express backend, vanilla JS frontend, Google Cloud services and Terraform infra.</p>
+            <div class="tags"><span>Python</span><span>GCP</span><span>Node</span><span>Terraform</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/audio-analysis" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://audio-analysis-web-n7afc3734q-ew.a.run.app" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Data">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Data">Data</span>
+            <img src="images/pic01.jpg" alt="ETL Sales Pipeline" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>ETL Sales Pipeline</h3>
+            <p>A complete data pipeline: Terraform infrastructure on AWS, Python + Pandas ETL and Tableau for business insights.</p>
+            <div class="tags"><span>AWS</span><span>Python</span><span>Pandas</span><span>Tableau</span><span>Terraform</span></div>
+            <div class="links">
+              <a href="https://www.youtube.com/watch?v=Wdl2NvBZbqs" target="_blank" rel="noopener noreferrer">Video ↗</a>
+              <a href="https://github.com/Fiarzen/de-totes-sales-data" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Data">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Data">Data</span>
+            <img src="images/pic02.jpg" alt="Guardian API Streaming project" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Guardian API Streaming</h3>
+            <p>Data streaming project using the Guardian API for content publishing, built with AWS services and Python for AWS Lambda deployment.</p>
+            <div class="tags"><span>AWS Lambda</span><span>Python</span><span>Terraform</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/Streaming-data-project" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Web">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Web">Web</span>
+            <img src="images/groove-garden-image.png" alt="Groove Garden API" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Groove Garden API</h3>
+            <p>Node/Express REST API on Railway with a Postgres DB, Swagger/OpenAPI docs and JWT auth for secure playlist management.</p>
+            <div class="tags"><span>Node</span><span>Express</span><span>PostgreSQL</span><span>JWT</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/groove-garden-backend-api" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://groove-garden-backend-api-production.up.railway.app/docs" target="_blank" rel="noopener noreferrer">Docs ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Web">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Web">Web</span>
+            <img src="images/pic04.jpg" alt="Stock Market Tracker interface" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Stock Market Tracker</h3>
+            <p>A clean interface for retrieving stock data via the Alpha Vantage API, built in JavaScript and deployed to Netlify.</p>
+            <div class="tags"><span>JavaScript</span><span>Alpha Vantage</span><span>Netlify</span></div>
+            <div class="links">
+              <a href="https://fiarzenstocktracker.netlify.app" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+              <a href="https://github.com/Fiarzen/stock-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Web">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Web">Web</span>
+            <img src="images/pic05.png" alt="Sun-time Calculator" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Sun-time Calculator</h3>
+            <p>Calculates time until sunrise or sunset from coordinates using a sunrise/sunset API. Lightweight vanilla JavaScript.</p>
+            <div class="tags"><span>JavaScript</span><span>API</span></div>
+            <div class="links">
+              <a href="https://fiarzen.github.io/sun-times" target="_blank" rel="noopener noreferrer">Demo ↗</a>
+              <a href="https://github.com/Fiarzen/sun-times" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-categories="Data">
+          <div class="thumb">
+            <span class="cat" aria-label="Category: Data">Data</span>
+            <img src="images/pic03.jpg" alt="Carbon Footprint Calculator" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Carbon Footprint Calculator</h3>
+            <p>A web app for calculating carbon footprints from everyday activities, built with Python and Streamlit.</p>
+            <div class="tags"><span>Python</span><span>Streamlit</span></div>
+            <div class="links">
+              <a href="https://github.com/Fiarzen/Carbon-footprint-calculator" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              <a href="https://carbontracker-lbsyapcj8pg9fenqjcvun2.streamlit.app" target="_blank" rel="noopener noreferrer">Streamlit ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // category filter
+  const buttons = document.querySelectorAll('.filters button');
+  const cards   = document.querySelectorAll('#projectGrid .card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function(){
+      buttons.forEach(b => b.classList.remove('on'));
+      this.classList.add('on');
+      const filter = this.dataset.filter;
+      cards.forEach(card => {
+        if(filter === 'all'){
+          card.hidden = false;
+        } else {
+          const cats = card.dataset.categories || '';
+          card.hidden = !cats.split(' ').includes(filter);
+        }
+      });
+    });
+  });
+
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
+</html>
