@@ -1,122 +1,153 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Jeremy Lam</title>
-  <meta name="description" content="About Jeremy Lam — Data &amp; Software Engineer, bootcamp graduate, session musician based in the UK." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-
-  <!-- NAV -->
-  <header class="nav" role="banner">
-    <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
-        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
-          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
-          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
-        </svg>
-      </button>
-      <nav id="mainNav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a class="cta" href="contact.html">Get in touch</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="section-wrap-lg wrap" aria-labelledby="aboutHeading">
-      <div class="about-layout">
-
-        <div class="about-portrait">
-          <img src="images/avatar.jpg" alt="Jeremy Lam" />
-          <div class="badge">
-            <span style="color:var(--accent);" aria-hidden="true">●</span>
-            Open to opportunities &amp; freelance
-          </div>
-        </div>
-
-        <div class="about-content">
-          <div class="idx mono" aria-hidden="true">// about</div>
-          <h2 id="aboutHeading">Engineer by training, musician by instinct.</h2>
-
-          <p>After an intensive <strong>13-week Data Engineering bootcamp with Northcoders</strong> and a <strong>12-week Software Development bootcamp with TechNative</strong>, I now focus on learning new frameworks while improving at the ones I use daily.</p>
-
-          <p>I care about systems that are clean, well-tested and easy to reason about. Most of my projects pair real infrastructure (Terraform, AWS, GCP) with a well-planned front end. Outside of code I play guitar and write music, with professional experience as a <strong>session musician and music educator</strong>.</p>
-
-          <div class="skillgroups" aria-label="Skill groups">
-            <div class="g">
-              <h4>Code</h4>
-              <ul>
-                <li>Python</li>
-                <li>Java</li>
-                <li>JavaScript (Node, React)</li>
-              </ul>
-            </div>
-            <div class="g">
-              <h4>Cloud &amp; DevOps</h4>
-              <ul>
-                <li>AWS · Google Cloud</li>
-                <li>Terraform</li>
-                <li>CI/CD — GitHub Actions</li>
-              </ul>
-            </div>
-            <div class="g">
-              <h4>Data</h4>
-              <ul>
-                <li>SQL · Modelling · Normalisation</li>
-                <li>Warehouse design</li>
-                <li>Star Schema · Lake · Lakehouse · Mesh</li>
-              </ul>
-            </div>
-            <div class="g">
-              <h4>Testing</h4>
-              <ul>
-                <li>Test-Driven Development</li>
-                <li>Pytest</li>
-                <li>Jest · Vitest</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="interests">
-            <b>Off the clock</b>
-            Guitar &amp; songwriting · cooking plant-based recipes · weightlifting · videogames with friends.
-          </div>
-        </div>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — Jeremy Lam</title>
+    <meta
+      name="description"
+      content="About Jeremy Lam — Data &amp; Software Engineer, bootcamp graduate, session musician based in the UK."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav" role="banner">
+      <div class="wrap">
+        <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+          <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          id="navToggle"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect y="4" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="10" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="16" width="22" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </button>
+        <nav id="mainNav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html" class="active">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a class="cta" href="contact.html">Get in touch</a>
       </div>
-    </section>
-  </main>
+    </header>
 
-  <footer role="contentinfo">
-    <div class="wrap">
-      <span>© 2026 Jeremy Lam</span>
-      <span>Designed clean · built with rhythm</span>
-    </div>
-  </footer>
+    <main>
+      <section class="section-wrap-lg wrap" aria-labelledby="aboutHeading">
+        <div class="about-layout">
+          <div class="about-portrait">
+            <img src="images/avatar.jpg" alt="Jeremy Lam" />
+            <div class="badge">
+              <span style="color: var(--accent)" aria-hidden="true">●</span>
+              Open to opportunities &amp; freelance
+            </div>
+          </div>
 
-<script>
-  // mobile nav toggle
-  const toggle = document.getElementById('navToggle');
-  const nav = document.getElementById('mainNav');
-  if(toggle && nav){
-    toggle.addEventListener('click', function(){
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-  }
-</script>
-</body>
+          <div class="about-content">
+            <div class="idx mono" aria-hidden="true">// about</div>
+            <h2 id="aboutHeading">Software Engineer</h2>
+
+            <p>
+              After an intensive
+              <strong
+                >13-week Data Engineering bootcamp with Northcoders</strong
+              >
+              and a
+              <strong
+                >12-week Software Development bootcamp with TechNative</strong
+              >, I now focus on learning new frameworks while improving at the
+              ones I use daily.
+            </p>
+
+            <p>
+              I care about systems that are clean, well-tested and easy to
+              reason about. Most of my projects pair real infrastructure
+              (Terraform, AWS, GCP) with a well-planned front end. Outside of
+              code I play guitar and write music, with professional experience
+              as a <strong>session musician and music educator</strong>.
+            </p>
+
+            <div class="skillgroups" aria-label="Skill groups">
+              <div class="g">
+                <h4>Code</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>JavaScript (Node, React)</li>
+                </ul>
+              </div>
+              <div class="g">
+                <h4>Cloud &amp; DevOps</h4>
+                <ul>
+                  <li>AWS · Google Cloud</li>
+                  <li>Terraform</li>
+                  <li>CI/CD — GitHub Actions</li>
+                </ul>
+              </div>
+              <div class="g">
+                <h4>Data</h4>
+                <ul>
+                  <li>SQL · Modelling · Normalisation</li>
+                  <li>Warehouse design</li>
+                  <li>Star Schema · Lake · Lakehouse · Mesh</li>
+                </ul>
+              </div>
+              <div class="g">
+                <h4>Testing</h4>
+                <ul>
+                  <li>Test-Driven Development</li>
+                  <li>Pytest</li>
+                  <li>Jest · Vitest</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="interests">
+              <b>Off the clock</b>
+              Guitar &amp; songwriting · cooking plant-based recipes ·
+              weightlifting · videogames with friends.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="wrap">
+        <span>© 2026 Jeremy Lam</span>
+        <span>Designed clean · built with rhythm</span>
+      </div>
+    </footer>
+
+    <script>
+      // mobile nav toggle
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+        });
+      }
+    </script>
+  </body>
 </html>
