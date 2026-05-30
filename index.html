@@ -1,210 +1,320 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jeremy Lam — Data &amp; Software Engineer</title>
-  <meta name="description" content="Jeremy Lam is a Data &amp; Software Engineer based in the UK, building data pipelines and full-stack apps with Python, AWS and Terraform." />
-  <meta property="og:title" content="Jeremy Lam — Data &amp; Software Engineer" />
-  <meta property="og:description" content="Building data pipelines and full-stack apps with Python, AWS and Terraform." />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
-<body>
-
-  <!-- NAV -->
-  <header class="nav" role="banner">
-    <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
-        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
-          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
-          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
-        </svg>
-      </button>
-      <nav id="mainNav" aria-label="Main navigation">
-        <a href="index.html" class="active">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a class="cta" href="contact.html">Get in touch</a>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home" aria-labelledby="heroHeading">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jeremy Lam — Data &amp; Software Engineer</title>
+    <meta
+      name="description"
+      content="Jeremy Lam is a Data &amp; Software Engineer based in the UK, building data pipelines and full-stack apps with Python, AWS and Terraform."
+    />
+    <meta
+      property="og:title"
+      content="Jeremy Lam — Data &amp; Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Building data pipelines and full-stack apps with Python, AWS and Terraform."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- NAV -->
+    <header class="nav" role="banner">
       <div class="wrap">
-        <div class="kicker mono">
-          <span class="pulse" aria-hidden="true"></span>
-          Data &amp; Software Engineer · UK
-        </div>
-        <h1 id="heroHeading">Clear systems, <span class="em">clean code</span></h1>
-        <p class="lede">Coming from a background in music, I now work as a freelance software engineer and am currently working full-time in IT and cybersecurity. I enjoy building and mainting systems that help people connect and learn.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="projects.html">View work <span class="ar" aria-hidden="true">↗</span></a>
-        </div>
-        <div class="meta" aria-label="Quick facts">
-          <div class="stat">
-            <div class="n">9+</div>
-            <div class="l">shipped projects</div>
-          </div>
-          <div class="stat">
-            <div class="n">2</div>
-            <div class="l">eng bootcamps</div>
-          </div>
-          <div class="stat">
-            <div class="n" style="display:flex; align-items:center; gap:10px;" aria-label="session musician">
-              <span aria-hidden="true">∿</span>
-              <span class="wave" id="heroWave" aria-hidden="true"></span>
-            </div>
-            <div class="l">session musician</div>
-          </div>
-        </div>
+        <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+          <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+        </a>
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          id="navToggle"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 22 22"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect y="4" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="10" width="22" height="2" rx="1" fill="currentColor" />
+            <rect y="16" width="22" height="2" rx="1" fill="currentColor" />
+          </svg>
+        </button>
+        <nav id="mainNav" aria-label="Main navigation">
+          <a href="index.html" class="active">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a class="cta" href="contact.html">Get in touch</a>
       </div>
-    </section>
+    </header>
 
-    <!-- CORE STACK -->
-    <section class="skills wrap" aria-labelledby="stackLabel">
-      <div class="lbl" id="stackLabel">Core stack</div>
-      <div class="chips" role="list">
-        <span class="chip" role="listitem">Python</span>
-        <span class="chip" role="listitem">Java</span>
-        <span class="chip" role="listitem">JavaScript</span>
-        <span class="chip" role="listitem">Node.js</span>
-        <span class="chip" role="listitem">React</span>
-        <span class="chip" role="listitem">AWS</span>
-        <span class="chip" role="listitem">Google Cloud</span>
-        <span class="chip" role="listitem">Terraform</span>
-        <span class="chip" role="listitem">SQL</span>
-        <span class="chip" role="listitem">CI/CD</span>
-        <span class="chip" role="listitem">Pytest</span>
-        <span class="chip" role="listitem">TDD</span>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS -->
-    <section class="section-wrap wrap" aria-labelledby="featuredHeading">
-      <div class="sec-head">
-        <div>
-          <div class="idx" aria-hidden="true">// featured</div>
-          <h2 id="featuredHeading">Selected work</h2>
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home" aria-labelledby="heroHeading">
+        <div class="wrap">
+          <div class="kicker mono">
+            <span class="pulse" aria-hidden="true"></span>
+            Data &amp; Software Engineer · UK
+          </div>
+          <h1 id="heroHeading">
+            Clear systems, <span class="em">clean code</span>
+          </h1>
+          <p class="lede">
+            Coming from a background in music, I now work as a software and
+            cybersecurity engineer.. I enjoy building and mainting systems that
+            help people connect and learn.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="projects.html"
+              >View work <span class="ar" aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="meta" aria-label="Quick facts">
+            <div class="stat">
+              <div class="n">9+</div>
+              <div class="l">shipped projects</div>
+            </div>
+            <div class="stat">
+              <div class="n">2</div>
+              <div class="l">eng bootcamps</div>
+            </div>
+            <div class="stat">
+              <div
+                class="n"
+                style="display: flex; align-items: center; gap: 10px"
+                aria-label="session musician"
+              >
+                <span aria-hidden="true">∿</span>
+                <span class="wave" id="heroWave" aria-hidden="true"></span>
+              </div>
+              <div class="l">session musician</div>
+            </div>
+          </div>
         </div>
-        <a class="btn btn-ghost" href="projects.html">All projects <span class="ar" aria-hidden="true">↗</span></a>
-      </div>
-      <div class="grid">
+      </section>
 
-        <article class="card">
-          <div class="thumb">
-            <span class="cat" aria-label="Category: Data, Web">Data · Web</span>
-            <img src="images/sts-analyser.png" alt="STS 2 Run Analyser dashboard showing run statistics" loading="lazy" />
-          </div>
-          <div class="body">
-            <h3>STS 2 Run Analyser</h3>
-            <p>FastAPI backend with a vanilla JS dashboard analysing roguelike run data — card pick rates, relic win rates, encounter difficulty, zip upload &amp; filtering by character/ascension.</p>
-            <div class="tags">
-              <span>Python</span><span>FastAPI</span><span>Railway</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/Fiarzen/sts-stats-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a href="https://sts-stats-tracker-production.up.railway.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
-            </div>
-          </div>
-        </article>
+      <!-- CORE STACK -->
+      <section class="skills wrap" aria-labelledby="stackLabel">
+        <div class="lbl" id="stackLabel">Core stack</div>
+        <div class="chips" role="list">
+          <span class="chip" role="listitem">Python</span>
+          <span class="chip" role="listitem">Java</span>
+          <span class="chip" role="listitem">JavaScript</span>
+          <span class="chip" role="listitem">Node.js</span>
+          <span class="chip" role="listitem">React</span>
+          <span class="chip" role="listitem">AWS</span>
+          <span class="chip" role="listitem">Google Cloud</span>
+          <span class="chip" role="listitem">Terraform</span>
+          <span class="chip" role="listitem">SQL</span>
+          <span class="chip" role="listitem">CI/CD</span>
+          <span class="chip" role="listitem">Pytest</span>
+          <span class="chip" role="listitem">TDD</span>
+        </div>
+      </section>
 
-        <article class="card">
-          <div class="thumb">
-            <span class="cat" aria-label="Category: Web, Cloud">Web · Cloud</span>
-            <img src="images/course-hosting.png" alt="Course Hosting Platform interface" loading="lazy" />
+      <!-- FEATURED PROJECTS -->
+      <section class="section-wrap wrap" aria-labelledby="featuredHeading">
+        <div class="sec-head">
+          <div>
+            <div class="idx" aria-hidden="true">// featured</div>
+            <h2 id="featuredHeading">Selected work</h2>
           </div>
-          <div class="body">
-            <h3>Course Hosting Platform</h3>
-            <p>Spring Boot + React full-stack app: RBAC, lesson tracking, Spring Security, S3 storage and Terraform-provisioned RDS &amp; EC2.</p>
-            <div class="tags">
-              <span>Spring Boot</span><span>React</span><span>AWS</span><span>Terraform</span>
+          <a class="btn btn-ghost" href="projects.html"
+            >All projects <span class="ar" aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <span class="cat" aria-label="Category: Data, Web"
+                >Data · Web</span
+              >
+              <img
+                src="images/sts-analyser.png"
+                alt="STS 2 Run Analyser dashboard showing run statistics"
+                loading="lazy"
+              />
             </div>
-            <div class="links">
-              <a href="https://github.com/Fiarzen/course-hosting-backend" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a href="https://mind-leaf.netlify.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            <div class="body">
+              <h3>STS 2 Run Analyser</h3>
+              <p>
+                FastAPI backend with a vanilla JS dashboard analysing roguelike
+                run data — card pick rates, relic win rates, encounter
+                difficulty, zip upload &amp; filtering by character/ascension.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>FastAPI</span><span>Railway</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/Fiarzen/sts-stats-tracker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub ↗</a
+                >
+                <a
+                  href="https://sts-stats-tracker-production.up.railway.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live demo ↗</a
+                >
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
 
-        <article class="card">
-          <div class="thumb">
-            <span class="cat" aria-label="Category: Cloud, Data">Cloud · Data</span>
-            <img src="images/audio-analysis-4.png" alt="Cloud Audio Analysis web app" loading="lazy" />
-          </div>
-          <div class="body">
-            <h3>Cloud Audio Analysis</h3>
-            <p>Audio analysis web app: Python processing, Node/Express backend, vanilla JS frontend, Google Cloud services and Terraform infra.</p>
-            <div class="tags">
-              <span>Python</span><span>GCP</span><span>Node</span><span>Terraform</span>
+          <article class="card">
+            <div class="thumb">
+              <span class="cat" aria-label="Category: Web, Cloud"
+                >Web · Cloud</span
+              >
+              <img
+                src="images/course-hosting.png"
+                alt="Course Hosting Platform interface"
+                loading="lazy"
+              />
             </div>
-            <div class="links">
-              <a href="https://github.com/Fiarzen/audio-analysis" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-              <a href="https://audio-analysis-web-n7afc3734q-ew.a.run.app" target="_blank" rel="noopener noreferrer">Live demo ↗</a>
+            <div class="body">
+              <h3>Course Hosting Platform</h3>
+              <p>
+                Spring Boot + React full-stack app: RBAC, lesson tracking,
+                Spring Security, S3 storage and Terraform-provisioned RDS &amp;
+                EC2.
+              </p>
+              <div class="tags">
+                <span>Spring Boot</span><span>React</span><span>AWS</span
+                ><span>Terraform</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/Fiarzen/course-hosting-backend"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub ↗</a
+                >
+                <a
+                  href="https://mind-leaf.netlify.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live demo ↗</a
+                >
+              </div>
             </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <span class="cat" aria-label="Category: Cloud, Data"
+                >Cloud · Data</span
+              >
+              <img
+                src="images/audio-analysis-4.png"
+                alt="Cloud Audio Analysis web app"
+                loading="lazy"
+              />
+            </div>
+            <div class="body">
+              <h3>Cloud Audio Analysis</h3>
+              <p>
+                Audio analysis web app: Python processing, Node/Express backend,
+                vanilla JS frontend, Google Cloud services and Terraform infra.
+              </p>
+              <div class="tags">
+                <span>Python</span><span>GCP</span><span>Node</span
+                ><span>Terraform</span>
+              </div>
+              <div class="links">
+                <a
+                  href="https://github.com/Fiarzen/audio-analysis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >GitHub ↗</a
+                >
+                <a
+                  href="https://audio-analysis-web-n7afc3734q-ew.a.run.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Live demo ↗</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- MUSIC STRIP -->
+      <section
+        class="music"
+        aria-labelledby="musicHeading"
+        style="margin-top: 50px"
+      >
+        <div class="wrap">
+          <div class="ico" aria-hidden="true">♪</div>
+          <div class="txt">
+            <h4 id="musicHeading">Music stuff</h4>
+            <p>
+              Session musician, songwriter and music educator. Some of my tracks
+              live on Bandcamp &amp; YouTube.
+            </p>
           </div>
-        </article>
+          <div class="out">
+            <a
+              href="https://jezmusic.bandcamp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Bandcamp ↗</a
+            >
+            <a
+              href="https://www.youtube.com/@JeremyLam0"
+              target="_blank"
+              rel="noopener noreferrer"
+              >YouTube ↗</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
-      </div>
-    </section>
-
-    <!-- MUSIC STRIP -->
-    <section class="music" aria-labelledby="musicHeading" style="margin-top:50px;">
+    <footer role="contentinfo">
       <div class="wrap">
-        <div class="ico" aria-hidden="true">♪</div>
-        <div class="txt">
-          <h4 id="musicHeading">Music stuff</h4>
-          <p>Session musician, songwriter and music educator. Some of my tracks live on Bandcamp &amp; YouTube.</p>
-        </div>
-        <div class="out">
-          <a href="https://jezmusic.bandcamp.com" target="_blank" rel="noopener noreferrer">Bandcamp ↗</a>
-          <a href="https://www.youtube.com/@JeremyLam0" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
-        </div>
+        <span>© 2026 Jeremy Lam</span>
+        <span>Designed clean · built with rhythm</span>
       </div>
-    </section>
+    </footer>
 
-  </main>
+    <script>
+      // hero waveform bars
+      (function () {
+        const w = document.getElementById("heroWave");
+        if (!w) return;
+        for (let i = 0; i < 7; i++) {
+          const b = document.createElement("i");
+          b.style.height = "100%";
+          b.style.animationDelay = i * 0.12 + "s";
+          w.appendChild(b);
+        }
+      })();
 
-  <footer role="contentinfo">
-    <div class="wrap">
-      <span>© 2026 Jeremy Lam</span>
-      <span>Designed clean · built with rhythm</span>
-    </div>
-  </footer>
-
-<script>
-  // hero waveform bars
-  (function(){
-    const w = document.getElementById('heroWave');
-    if(!w) return;
-    for(let i=0;i<7;i++){
-      const b = document.createElement('i');
-      b.style.height = '100%';
-      b.style.animationDelay = (i * 0.12) + 's';
-      w.appendChild(b);
-    }
-  })();
-
-  // mobile nav toggle
-  const toggle = document.getElementById('navToggle');
-  const nav = document.getElementById('mainNav');
-  if(toggle && nav){
-    toggle.addEventListener('click', function(){
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-  }
-</script>
-</body>
+      // mobile nav toggle
+      const toggle = document.getElementById("navToggle");
+      const nav = document.getElementById("mainNav");
+      if (toggle && nav) {
+        toggle.addEventListener("click", function () {
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open);
+        });
+      }
+    </script>
+  </body>
 </html>
