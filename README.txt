@@ -2,18 +2,23 @@ This is my portfolio site, hosted at jeremylam.netlify.app
 
 Adding a blog post
 -------------------
-1. Copy an existing post file, e.g. blog-mcp-itglue-documentation-server.html,
-   to a new file named blog-<slug>.html at the repo root (slug = short,
-   hyphenated title).
-2. Update the <title>/<meta description>, the <h1> in .post-hero, the date
-   and tags in .post-meta/.post-tags, and the body content inside
-   .post-body. Keep the nav/footer markup as-is (just make sure the "Blog"
-   link doesn't get a stray "active" class removed).
-3. Open blog.html and add a new <article class="post-row"> entry above (or
-   in place of) the existing ones, linking to your new file, with a date,
-   a short excerpt, and matching tags.
-4. Preview locally (e.g. `python3 -m http.server 8123`) and check both
-   blog.html and the new post page render correctly.
+Run the scaffolding script from the repo root:
+
+  python3 new-post.py "My Post Title" --tags "Python, MCP" --excerpt "One-line summary for the blog index."
+
+This creates blog-<slug>.html and adds a matching entry to the top of the
+list in blog.html, dated today (pass --date "6 June 2026" to override).
+
+Then open the new blog-<slug>.html and replace the TODO paragraphs with your
+content — use <p> for paragraphs, <h2> for section headings, <code> for
+inline code.
+
+Preview locally before pushing:
+
+  python3 -m http.server 8123
+  → http://localhost:8123/blog.html
 
 No build step, database or CMS is involved — posts are just plain HTML
-files styled by assets/css/style.css.
+files styled by assets/css/style.css. If you'd rather not use the script,
+copy an existing blog-*.html file, edit its content, and add a matching
+<article class="post-row"> entry to blog.html by hand.
