@@ -1,46 +1,86 @@
-<html>
-  <head>
-    <title>Jeremy Lam - Data/Software Engineer</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-  </head>
-  <body class="is-preload">
-    <!-- Header -->
-    <section id="header">
-      <header>
-        <span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-        <h1 id="logo"><a href="#">Jeremy Lam</a></h1>
-        <p>Becoming the best data and software engineer I can be.</p>
-      </header>
-      <nav id="nav">
-        <ul>
-          <li><a href="#one" class="active">About</a></li>
-          <li><a href="#two">Technical Skills</a></li>
-          <li><a href="#three">Projects</a></li>
-          <li><a href="#four">Music and other interests</a></li>
-          <li><a href="#five">Contact Me</a></li>
-        </ul>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — Jeremy Lam</title>
+  <meta name="description" content="Notes on data engineering, software projects and things I'm learning, by Jeremy Lam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <footer>
-        <ul class="icons">
-          <li>
-            <a href="https://github.com/Fiarzen" class="icon brands fa-github"
-              ><span class="label">Github</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="mailto:Jeremylam1995@gmail.com"
-              class="icon solid fa-envelope"
-              ><span class="label">Email</span></a
-            >
-          </li>
-        </ul>
-      </footer>
+      <a class="cta" href="contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-wrap wrap" aria-labelledby="blogHeading">
+      <div class="sec-head">
+        <div>
+          <div class="idx" aria-hidden="true">// blog</div>
+          <h2 id="blogHeading">Notes &amp; write-ups</h2>
+          <p>Short posts on things I build and learn — data engineering, side projects and whatever I'm currently deep in.</p>
+        </div>
+      </div>
+
+      <div class="post-list">
+
+        <article class="post-row">
+          <div class="post-main">
+            <div class="post-date mono">6 June 2026</div>
+            <h3><a href="blog-mcp-itglue-documentation-server.html">Building an MCP server to search our ITGlue documentation</a></h3>
+            <p>How working through Anthropic's MCP courses turned into a real tool: a Python sync layer, a local SQLite full-text index, and a read-only MCP server wired up to Microsoft Copilot Studio.</p>
+            <div class="post-tags">
+              <span>MCP</span><span>Python</span><span>SQLite</span><span>ITGlue</span><span>Copilot Studio</span>
+            </div>
+          </div>
+          <span class="post-arrow" aria-hidden="true">↗</span>
+        </article>
+
+      </div>
     </section>
-  </body>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
 </html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Building an MCP server to search our ITGlue documentation — Jeremy Lam</title>
+  <meta name="description" content="A Python sync layer, a local SQLite full-text index, and a read-only MCP server wired up to Microsoft Copilot Studio — turning Anthropic's MCP courses into a real workplace tool." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a class="cta" href="contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="post-hero wrap">
+      <a class="back mono" href="blog.html"><span aria-hidden="true">←</span> Back to blog</a>
+      <h1>Building an MCP server to search our ITGlue documentation</h1>
+      <div class="post-meta">
+        <span>6 June 2026</span>
+        <span aria-hidden="true">·</span>
+        <span>MCP · Python · SQLite</span>
+      </div>
+      <div class="post-tags">
+        <span>MCP</span><span>Python</span><span>SQLite</span><span>ITGlue</span><span>Copilot Studio</span>
+      </div>
+    </section>
+
+    <article class="post-body wrap">
+
+      <p>Recently I've been working through Anthropic's Academy courses on the Model Context Protocol (MCP), and realised I already had a use case in front of me to apply what I'd learnt.</p>
+
+      <p>The MSP I work at has a lot of knowledge stored in our documentation platform, ITGlue, but as a new starter it could be hard to find what I was looking for. Rather than leave that as a vague complaint, I decided to try and fix it — and use it as an excuse to actually build something with MCP instead of just watching course videos.</p>
+
+      <h2>Syncing ITGlue into something searchable</h2>
+
+      <p>I started by writing a Python sync layer that pulls from ITGlue's REST API and stores the data in a local SQLite database with full-text search. That covers both the structured records (network, licensing, etc.) and the hand-written documents and procedures, plus the list of client organisations.</p>
+
+      <p>Crucially, I scoped the sync so it never pulls the passwords stored in ITGlue. The tool only needs to help people find documentation, not credentials, so leaving passwords out of scope entirely was an easy call and one less thing to worry about securing downstream.</p>
+
+      <p>Learning ITGlue's data model properly was important here to avoid a stream of 404 errors — it took me a while to realise the <code>/documents</code> endpoint didn't exist, and that documents live under a different part of the API than I'd assumed.</p>
+
+      <h2>Exposing it through MCP</h2>
+
+      <p>On top of that database I built the MCP server itself, exposing a small set of read-only tools: search the documentation, fetch a full document, and look up an organisation. Keeping the tool surface small and read-only made it easy to reason about what the server could and couldn't do — there was never any question of it writing back to ITGlue.</p>
+
+      <p>Getting Microsoft Copilot Studio to actually talk to my server helped solidify what I'd learnt in Anthropic's courses far more than the course material alone. Stateless HTTP was the easiest way to set up communication between the MCP server and MCP client in my case.</p>
+
+      <h2>Worth it</h2>
+
+      <p>Once it was all connected, it was quite rewarding to drop it straight into my workflow and start finding information far more quickly. It's a small tool, but it turned an abstract course on a new protocol into something I now use most days.</p>
+
+      <div class="post-cta">
+        <a class="btn btn-ghost" href="blog.html">← Back to blog</a>
+        <a class="btn btn-primary" href="contact.html">Get in touch <span class="ar" aria-hidden="true">↗</span></a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
+</html>
