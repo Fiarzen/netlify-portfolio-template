@@ -70,6 +70,8 @@
 
       <p>The job itself runs asynchronously: submit it and get back a job ID, poll until Datto reports it's finished, then fetch the stdout and stderr. Wiring that up taught me more about designing a tool boundary than the read-only side did. With a search tool, the interesting design question is what to expose. With a write tool, the interesting question is what to refuse to expose, and building the allowlist first, before writing a single line of the tool itself, made that much easier to reason about.</p>
 
+      <p>A concrete example that ended up in the allowlist: we'd been chasing a bug on some Dell machines where a database file behind the CapabilityAccessManager service (the bit of Windows that tracks which apps have been granted access to things like the camera and microphone) would balloon in size over time, eating disk space and dragging the machine down until someone noticed and cleared it by hand. Rather than write a general-purpose "run this arbitrary PowerShell" tool, I added two narrow, single-purpose entries: one that checks the size of that database file and reports back, and a separate one that stops the service, clears the bloated file and restarts it. The agent can ask "does this device have the CapabilityAccessManager bloat issue" and, if the answer is yes, run the fix, but it can only ever run those two specific, pre-tested actions, never anything more general.</p>
+
       <p>It's a small addition, but it's the part of this project I'm most pleased with. The server can now do a bit more than answer questions, on my terms, within limits I set in advance rather than ones an agent has to be trusted to respect on its own.</p>
 
       <div class="post-cta">
