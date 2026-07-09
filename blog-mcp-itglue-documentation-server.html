@@ -54,21 +54,25 @@
 
       <p>Recently I've been working through Anthropic's Academy courses on the Model Context Protocol (MCP), and realised I already had a use case in front of me to apply what I'd learnt.</p>
 
-      <p>The MSP I work at has a lot of knowledge stored in our documentation platform, ITGlue, but as a new starter it could be hard to find what I was looking for. Rather than leave that as a vague complaint, I decided to try and fix it — and use it as an excuse to actually build something with MCP instead of just watching course videos.</p>
+      <p>The MSP I work at has a lot of knowledge stored in our documentation platform (ITGlue), but as a new starter it could be
+hard to find what I was looking for.</p>
 
       <h2>Syncing ITGlue into something searchable</h2>
 
-      <p>I started by writing a Python sync layer that pulls from ITGlue's REST API and stores the data in a local SQLite database with full-text search. That covers both the structured records (network, licensing, etc.) and the hand-written documents and procedures, plus the list of client organisations.</p>
-
-      <p>Crucially, I scoped the sync so it never pulls the passwords stored in ITGlue. The tool only needs to help people find documentation, not credentials, so leaving passwords out of scope entirely was an easy call and one less thing to worry about securing downstream.</p>
+      <p>I started by writing a Python sync layer that pulls from ITGlue's
+REST API and stores the data in a local SQLite database with full-text search: both the structured records (network, licensing, etc.) and the hand-written documents/procedures, plus the list of client organisations. Crucially, I scoped the sync so
+it never pulls the passwords stored in ITGlue. Learning ITGlue's
+data model properly was important here to avoid 404 errors (it took me a while to realise the /documents endpoint didn't exist)</p>
 
       <p>Learning ITGlue's data model properly was important here to avoid a stream of 404 errors — it took me a while to realise the <code>/documents</code> endpoint didn't exist, and that documents live under a different part of the API than I'd assumed.</p>
 
       <h2>Exposing it through MCP</h2>
 
-      <p>On top of that database I built the MCP server itself, exposing a small set of read-only tools: search the documentation, fetch a full document and look up an organisation. Keeping the tool surface small and read-only made it easy to reason about what the server could and couldn't do — there was never any question of it writing back to ITGlue.</p>
+      <p>On top of that database I built the MCP server, exposing a small
+set of read-only tools: search the documentation, fetch a full document, and look up an organisation.</p>
 
-      <p>Getting Microsoft Copilot Studio to actually talk to my server helped solidify what I'd learnt in Anthropic's courses far more than the course material alone. Stateless HTTP was the easiest way to set up communication between the MCP server and MCP client in my case.</p>
+      <p>Getting Microsoft Copilot Studio to actually talk to my server helped solidify what I'd learnt in Anthropic's courses.
+Stateless HTTP was the easiest way to set up communication between the MCP server and MCP client in my case.</p>
 
       <h2>Worth it</h2>
 
