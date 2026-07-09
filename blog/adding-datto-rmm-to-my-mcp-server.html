@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adding Datto RMM to my MCP server — Jeremy Lam</title>
+  <meta name="description" content="Extending my ITGlue MCP server to mirror Datto RMM devices and alerts, then adding a narrow, allowlisted way for the agent to actually run a job on an endpoint." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" role="banner">
+    <div class="wrap">
+      <a class="brand" href="../index.html" aria-label="Jeremy Lam — home">
+        <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+          <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      </button>
+      <nav id="mainNav" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="./" class="active">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+      <a class="cta" href="../contact.html">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="post-hero wrap">
+      <a class="back mono" href="./"><span aria-hidden="true">←</span> Back to blog</a>
+      <h1>Adding Datto RMM to my MCP server</h1>
+      <div class="post-meta">
+        <span>9 July 2026</span>
+        <span aria-hidden="true">·</span>
+        <span>MCP · Python · Datto RMM</span>
+      </div>
+      <div class="post-tags">
+        <span>MCP</span><span>Python</span><span>Datto RMM</span><span>Security</span>
+      </div>
+    </section>
+
+    <article class="post-body wrap">
+
+      <p>The MCP server I built to search our ITGlue documentation started out doing one job: turning a pile of static documentation into something an agent could search. It worked well enough that the obvious next question was whether the same agent could also see what was actually happening on our clients' machines right now, not just what was written down about them. That meant bringing in Datto RMM, the remote monitoring and management tool the MSP I work at uses to keep an eye on client devices.</p>
+
+      <h2>Mirroring Datto RMM alongside ITGlue</h2>
+
+      <p>I followed the same pattern as the ITGlue sync: a Python layer that pulls sites, devices (with the hardware and software audit data flattened out) and open alerts from Datto's REST API, and writes them into the same local SQLite database, indexed for full-text search alongside the documentation. Datto's auth is a bit different to ITGlue's, an OAuth2 password grant against their token endpoint, authenticated with a Basic header using Datto's own public client credentials rather than anything secret, then the account's API key and secret as the username and password.</p>
+
+      <p>One decision carried straight over from a lesson I'd already learned the hard way on this project: Datto RMM has free-text UDF fields (user-defined fields technicians can put anything in), and I exclude them everywhere, from the device audit data, the site notes, all of it. I'd previously had to rip out an entire Autotask integration because a similar free-text field turned out to hold plaintext customer credentials, so this time I built the exclusion in from the start rather than discovering the problem later.</p>
+
+      <p>For a handful of things where the mirror would go stale too quickly to be useful, patch status, antivirus state, who's currently logged in, I added a few tools that skip the local database and call Datto's API directly. Everything else is served from the mirror, which keeps most tool calls fast and doesn't hammer Datto's rate limits every time someone asks a question.</p>
+
+      <h2>Giving the agent a narrow way to actually do something</h2>
+
+      <p>Everything up to that point was read-only, which felt like the right, cautious way to build a tool that a semi-autonomous agent has access to. But a lot of what makes an RMM genuinely useful is being able to run something on a device: restart a service, clear a cache, kick off a script. That's a different category of risk to a search tool. Handing an agent the ability to run arbitrary code on a client's endpoint isn't something I was willing to do just because it would be convenient.</p>
+
+      <p>So instead of letting the agent supply a component and its parameters, I built a fixed allowlist. Each entry maps a plain, friendly key to a specific, pre-vetted Datto component ID and a fixed set of variables, copied by hand from the Datto web UI (the component ID isn't something you can discover through the API at all, which made the allowlist feel less like a workaround and more like the only sane design). The agent picks a key from the list, nothing more. It never sees or sets a raw component ID or variable, so there's no way to smuggle something unvetted through. The whole feature also sits behind an opt-in flag that's off by default, so a deployment has to deliberately turn it on before these tools even exist to the agent.</p>
+
+      <p>The job itself runs asynchronously: submit it and get back a job ID, poll until Datto reports it's finished, then fetch the stdout and stderr. Wiring that up taught me more about designing a tool boundary than the read-only side did. With a search tool, the interesting design question is what to expose. With a write tool, the interesting question is what to refuse to expose, and building the allowlist first, before writing a single line of the tool itself, made that much easier to reason about.</p>
+
+      <p>It's a small addition, but it's the part of this project I'm most pleased with. The server can now do a bit more than answer questions, on my terms, within limits I set in advance rather than ones an agent has to be trusted to respect on its own.</p>
+
+      <div class="post-cta">
+        <a class="btn btn-ghost" href="./">← Back to blog</a>
+        <a class="btn btn-primary" href="../contact.html">Get in touch <span class="ar" aria-hidden="true">↗</span></a>
+      </div>
+
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="wrap">
+      <span>© 2026 Jeremy Lam</span>
+      <span>Designed clean · built with rhythm</span>
+    </div>
+  </footer>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
+</html>

@@ -6,9 +6,9 @@ Usage:
   python3 new-post.py "My Post Title" --tags "Python, MCP" --excerpt "One-line summary for the blog index."
   python3 new-post.py "My Post Title" --date "6 June 2026"
 
-Creates blog-<slug>.html from the built-in template and inserts a matching
-entry at the top of the list in blog.html. Then open the new file and replace
-the TODO paragraphs with your content.
+Creates blog/<slug>.html from the built-in template and inserts a matching
+entry at the top of the list in blog/index.html. Then open the new file and
+replace the TODO paragraphs with your content.
 """
 
 import argparse
@@ -30,14 +30,14 @@ POST_TEMPLATE = """<!doctype html>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
   <!-- NAV -->
   <header class="nav" role="banner">
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+      <a class="brand" href="../index.html" aria-label="Jeremy Lam — home">
         <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
@@ -48,19 +48,19 @@ POST_TEMPLATE = """<!doctype html>
         </svg>
       </button>
       <nav id="mainNav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="./" class="active">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
       </nav>
-      <a class="cta" href="contact.html">Get in touch</a>
+      <a class="cta" href="../contact.html">Get in touch</a>
     </div>
   </header>
 
   <main>
     <section class="post-hero wrap">
-      <a class="back mono" href="blog.html"><span aria-hidden="true">←</span> Back to blog</a>
+      <a class="back mono" href="./"><span aria-hidden="true">←</span> Back to blog</a>
       <h1>{title}</h1>
       <div class="post-meta">
         <span>{date}</span>
@@ -79,8 +79,8 @@ POST_TEMPLATE = """<!doctype html>
       <p>TODO: section content.</p>
 
       <div class="post-cta">
-        <a class="btn btn-ghost" href="blog.html">← Back to blog</a>
-        <a class="btn btn-primary" href="contact.html">Get in touch <span class="ar" aria-hidden="true">↗</span></a>
+        <a class="btn btn-ghost" href="./">← Back to blog</a>
+        <a class="btn btn-primary" href="../contact.html">Get in touch <span class="ar" aria-hidden="true">↗</span></a>
       </div>
 
     </article>
@@ -143,15 +143,15 @@ def main() -> int:
     today = datetime.date.today()
     date = args.date or f"{today.day} {today.strftime('%B %Y')}"
     slug = args.slug or slugify(args.title)
-    filename = f"blog-{slug}.html"
-    post_path = ROOT / filename
-    blog_index = ROOT / "blog.html"
+    filename = f"{slug}.html"
+    post_path = ROOT / "blog" / filename
+    blog_index = ROOT / "blog" / "index.html"
 
     if post_path.exists():
-        print(f"error: {filename} already exists — pass --slug to pick another name", file=sys.stderr)
+        print(f"error: blog/{filename} already exists — pass --slug to pick another name", file=sys.stderr)
         return 1
     if not blog_index.exists():
-        print("error: blog.html not found — run this from the repo root", file=sys.stderr)
+        print("error: blog/index.html not found — run this from the repo root", file=sys.stderr)
         return 1
 
     tags = [t.strip() for t in args.tags.split(",") if t.strip()]
@@ -168,7 +168,7 @@ def main() -> int:
     index_html = blog_index.read_text(encoding="utf-8")
     marker = '<div class="post-list">'
     if marker not in index_html:
-        print("error: couldn't find the post list in blog.html — add the entry by hand", file=sys.stderr)
+        print("error: couldn't find the post list in blog/index.html — add the entry by hand", file=sys.stderr)
         return 1
     entry = LIST_ENTRY_TEMPLATE.format(
         date=date, filename=filename, title=title_esc,
@@ -176,16 +176,16 @@ def main() -> int:
     )
     blog_index.write_text(index_html.replace(marker, marker + entry, 1), encoding="utf-8")
 
-    print(f"created  {filename}")
-    print(f"updated  blog.html (new entry added at the top)")
+    print(f"created  blog/{filename}")
+    print(f"updated  blog/index.html (new entry added at the top)")
     print()
     print("next steps:")
-    print(f"  1. open {filename} and replace the TODO paragraphs with your content")
+    print(f"  1. open blog/{filename} and replace the TODO paragraphs with your content")
     if not tags:
         print(f"  2. replace the TODO tag in both files (or rerun with --tags next time)")
     if args.excerpt.startswith("TODO"):
-        print(f"  3. replace the TODO excerpt in blog.html and the meta description in {filename}")
-    print(f"  preview: python3 -m http.server 8123  →  http://localhost:8123/blog.html")
+        print(f"  3. replace the TODO excerpt in blog/index.html and the meta description in blog/{filename}")
+    print(f"  preview: python3 -m http.server 8123  →  http://localhost:8123/blog/")
     return 0
 
 

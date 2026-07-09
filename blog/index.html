@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
 </head>
 <body>
 
   <!-- NAV -->
   <header class="nav" role="banner">
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Jeremy Lam — home">
+      <a class="brand" href="../index.html" aria-label="Jeremy Lam — home">
         <span class="mark" aria-hidden="true">JL</span> Jeremy Lam
       </a>
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="navToggle">
@@ -26,13 +26,13 @@
         </svg>
       </button>
       <nav id="mainNav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="blog.html" class="active">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="../index.html">Home</a>
+        <a href="../projects.html">Projects</a>
+        <a href="./" class="active">Blog</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
       </nav>
-      <a class="cta" href="contact.html">Get in touch</a>
+      <a class="cta" href="../contact.html">Get in touch</a>
     </div>
   </header>
 
@@ -49,8 +49,20 @@
       <div class="post-list">
         <article class="post-row">
           <div class="post-main">
+            <div class="post-date mono">9 July 2026</div>
+            <h3><a href="adding-datto-rmm-to-my-mcp-server.html">Adding Datto RMM to my MCP server</a></h3>
+            <p>Extending my ITGlue MCP server to mirror Datto RMM devices and alerts, then adding a narrow, allowlisted way for the agent to actually run a job on an endpoint.</p>
+            <div class="post-tags">
+              <span>MCP</span><span>Python</span><span>Datto RMM</span><span>Security</span>
+            </div>
+          </div>
+          <span class="post-arrow" aria-hidden="true">↗</span>
+        </article>
+
+        <article class="post-row">
+          <div class="post-main">
             <div class="post-date mono">6 June 2026</div>
-            <h3><a href="blog-mcp-itglue-documentation-server.html">Building an MCP server to search our ITGlue documentation</a></h3>
+            <h3><a href="mcp-itglue-documentation-server.html">Building an MCP server to search our ITGlue documentation</a></h3>
             <p>How working through Anthropic's MCP courses turned into a real tool: a Python sync layer, a local SQLite full-text index and a read-only MCP server wired up to Microsoft Copilot Studio.</p>
             <div class="post-tags">
               <span>MCP</span><span>Python</span><span>SQLite</span><span>ITGlue</span><span>Copilot Studio</span>
