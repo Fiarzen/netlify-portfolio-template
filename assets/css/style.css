@@ -272,6 +272,9 @@ section{scroll-margin-top:80px;}
 .post-body ul{margin:0 0 22px; padding-left:22px; color:var(--ink-2);}
 .post-body li{margin-bottom:8px; font-size:17px; line-height:1.6;}
 .post-cta{border-top:1px solid var(--border); margin-top:12px; padding-top:34px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+.post-figure{margin:8px 0 34px; padding:26px 20px 18px; background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); box-shadow:var(--shadow-sm);}
+.post-figure svg{display:block; width:100%; height:auto;}
+.post-figure figcaption{margin-top:14px; font-family:var(--mono); font-size:12.5px; color:var(--ink-3); text-align:center; line-height:1.5;}
 
 /* ---------- page sections spacing ---------- */
 .section-wrap{padding:64px 0 30px;}
