@@ -256,7 +256,7 @@ section{scroll-margin-top:80px;}
 .post-row:hover .post-arrow{color:var(--accent); transform:translate(3px,-3px);}
 
 /* ---------- blog post ---------- */
-.post-hero{padding:60px 0 8px;}
+.post-hero{max-width:70ch; margin:0 auto; padding:60px 0 8px;}
 .post-hero .back{font-family:var(--mono); font-size:13.5px; color:var(--ink-2); display:inline-flex; align-items:center; gap:7px; margin-bottom:26px;}
 .post-hero .back:hover{color:var(--accent);}
 .post-hero h1{font-size:clamp(32px,5vw,50px); max-width:20ch;}
