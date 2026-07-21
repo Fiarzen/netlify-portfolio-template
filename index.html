@@ -101,131 +101,52 @@
         </div>
       </section>
 
-      <!-- FEATURED PROJECTS -->
-      <section class="section-wrap wrap" aria-labelledby="featuredHeading">
+      <!-- RECENT POSTS -->
+      <section class="section-wrap wrap" aria-labelledby="postsHeading">
         <div class="sec-head">
           <div>
-            <div class="idx" aria-hidden="true">// featured</div>
-            <h2 id="featuredHeading">Selected work</h2>
+            <div class="idx" aria-hidden="true">// blog</div>
+            <h2 id="postsHeading">Recent posts</h2>
           </div>
-          <a class="btn btn-ghost" href="projects.html"
-            >All projects <span class="ar" aria-hidden="true">↗</span></a
+          <a class="btn btn-ghost" href="blog/"
+            >All posts <span class="ar" aria-hidden="true">↗</span></a
           >
         </div>
-        <div class="grid">
-          <article class="card">
-            <div class="thumb">
-              <span class="cat" aria-label="Category: Data, Web"
-                >Data · Web</span
-              >
-              <img
-                src="images/sts-analyser.png"
-                alt="STS 2 Run Analyser dashboard showing run statistics"
-                loading="lazy"
-              />
-            </div>
-            <div class="body">
-              <h3>STS 2 Run Analyser</h3>
-              <p>
-                FastAPI backend with a vanilla JS dashboard analysing roguelike
-                run data — card pick rates, relic win rates, encounter
-                difficulty, zip upload &amp; filtering by character/ascension.
-              </p>
-              <div class="tags">
-                <span>Python</span><span>FastAPI</span><span>Railway</span>
-              </div>
-              <div class="links">
-                <a
-                  href="https://github.com/Fiarzen/sts-stats-tracker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub ↗</a
-                >
-                <a
-                  href="https://sts-stats-tracker-production.up.railway.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live demo ↗</a
-                >
+        <div class="post-list">
+          <article class="post-row">
+            <div class="post-main">
+              <div class="post-date mono">21 July 2026</div>
+              <h3><a href="blog/adding-semantic-search-to-my-mcp-server.html">Adding semantic search to my MCP server</a></h3>
+              <p>Bolting vector search onto the ITGlue MCP server: what an embedding actually is, how documents get embedded cheaply, and why everything still falls back to keyword search the moment it can&#x27;t.</p>
+              <div class="post-tags">
+                <span>MCP</span><span>Python</span><span>Azure OpenAI</span><span>SQLite</span><span>Embeddings</span>
               </div>
             </div>
+            <span class="post-arrow" aria-hidden="true">↗</span>
           </article>
 
-          <article class="card">
-            <div class="thumb">
-              <span class="cat" aria-label="Category: Web, Cloud"
-                >Web · Cloud</span
-              >
-              <img
-                src="images/course-hosting.png"
-                alt="Course Hosting Platform interface"
-                loading="lazy"
-              />
-            </div>
-            <div class="body">
-              <h3>Course Hosting Platform</h3>
-              <p>
-                Spring Boot + React full-stack app: RBAC, lesson tracking,
-                Spring Security, S3 storage and Terraform-provisioned RDS &amp;
-                EC2.
-              </p>
-              <div class="tags">
-                <span>Spring Boot</span><span>React</span><span>AWS</span
-                ><span>Terraform</span>
-              </div>
-              <div class="links">
-                <a
-                  href="https://github.com/Fiarzen/course-hosting-backend"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub ↗</a
-                >
-                <a
-                  href="https://mind-leaf.netlify.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live demo ↗</a
-                >
+          <article class="post-row">
+            <div class="post-main">
+              <div class="post-date mono">9 July 2026</div>
+              <h3><a href="blog/adding-datto-rmm-to-my-mcp-server.html">Adding Datto RMM to my MCP server</a></h3>
+              <p>Extending my ITGlue MCP server to mirror Datto RMM devices and alerts, then adding a narrow, allowlisted way for the agent to actually run a job on an endpoint.</p>
+              <div class="post-tags">
+                <span>MCP</span><span>Python</span><span>Datto RMM</span><span>Security</span>
               </div>
             </div>
+            <span class="post-arrow" aria-hidden="true">↗</span>
           </article>
 
-          <article class="card">
-            <div class="thumb">
-              <span class="cat" aria-label="Category: Cloud, Data"
-                >Cloud · Data</span
-              >
-              <img
-                src="images/audio-analysis-4.png"
-                alt="Cloud Audio Analysis web app"
-                loading="lazy"
-              />
-            </div>
-            <div class="body">
-              <h3>Cloud Audio Analysis</h3>
-              <p>
-                Audio analysis web app: Python processing, Node/Express backend,
-                vanilla JS frontend, Google Cloud services and Terraform infra.
-              </p>
-              <div class="tags">
-                <span>Python</span><span>GCP</span><span>Node</span
-                ><span>Terraform</span>
-              </div>
-              <div class="links">
-                <a
-                  href="https://github.com/Fiarzen/audio-analysis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >GitHub ↗</a
-                >
-                <a
-                  href="https://audio-analysis-web-n7afc3734q-ew.a.run.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >Live demo ↗</a
-                >
+          <article class="post-row">
+            <div class="post-main">
+              <div class="post-date mono">6 June 2026</div>
+              <h3><a href="blog/mcp-itglue-documentation-server.html">Building an MCP server to search our ITGlue documentation</a></h3>
+              <p>How working through Anthropic's MCP courses turned into a real tool: a Python sync layer, a local SQLite full-text index and a read-only MCP server wired up to Microsoft Copilot Studio.</p>
+              <div class="post-tags">
+                <span>MCP</span><span>Python</span><span>SQLite</span><span>ITGlue</span><span>Copilot Studio</span>
               </div>
             </div>
+            <span class="post-arrow" aria-hidden="true">↗</span>
           </article>
         </div>
       </section>
